@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>CSRF of Thrones</h1>
+  <form action="/link/google" method="POST">
+    <input type="hidden" name="csrf" value="<%= csrfToken %>">
+    <button type="submit">Link with Google</button>
+  </form>
+</body>
+</html>
+

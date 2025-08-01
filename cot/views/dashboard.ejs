@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Dashboard</h1>
+  <% if (linked) { %>
+    <p>Google linked. Access Token: <%= session.tokens.access %></p>
+    <form action="/user/settings" method="POST">
+      <input type="hidden" name="csrf" value="<%= csrfToken %>">
+      <label><input type="checkbox" name="internal"> Become Internal</label>
+      <button>Save Settings</button>
+    </form>
+    <p><a href="/internal/flag">Get Internal Flag</a></p>
+  <% } else { %>
+    <p>You must <a href="/login">link Google</a> first.</p>
+  <% } %>
+</body>
+</html>
+
