@@ -1,0 +1,23 @@
+[INFO] Initializing system hardware...
+[INFO] CPU: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+[INFO] Memory check passed: 8192MB OK
+[INFO] Bootloader integrity: OK
+[INFO] Starting service: netcfg
+[INFO] Starting service: cryptd
+[WARN] /dev/sda1 temperature threshold exceeded
+[INFO] Checking disk health... PASSED
+[DEBUG] Running security audit module...
+[INFO] Enabling secure boot features
+[INFO] Loading kernel modules...
+[DEBUG] modprobe: loaded module ext4
+[DEBUG] modprobe: loaded module aesni_intel
+[INFO] Starting network services...
+[INFO] eth0: link up, 192.168.1.20
+[DEBUG] audit_log: integrity token issued
+[INFO] Mounting /dev/voidroot to /
+[INFO] Starting userland initialization...
+[INFO] Starting time sync daemon...
+[DEBUG] entropy pool: 87% full
+[INFO] watchdog: system heartbeat initialized
+[WARN] authd: login failed from 192.168.1.42
+[INFO] Boot completed at 00:00:12.345
