@@ -1,0 +1,270 @@
+[
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "readline",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "readline",
+        "description": "readline",
+        "detail": "readline",
+        "documentation": {}
+    },
+    {
+        "label": "AES",
+        "importPath": "Crypto.Cipher",
+        "description": "Crypto.Cipher",
+        "isExtraImport": true,
+        "detail": "Crypto.Cipher",
+        "documentation": {}
+    },
+    {
+        "label": "unpad",
+        "importPath": "Crypto.Util.Padding",
+        "description": "Crypto.Util.Padding",
+        "isExtraImport": true,
+        "detail": "Crypto.Util.Padding",
+        "documentation": {}
+    },
+    {
+        "label": "toss",
+        "kind": 2,
+        "importPath": "old _riend.chall.HAND_GAME",
+        "description": "old _riend.chall.HAND_GAME",
+        "peekOfCode": "def toss():\n    print(\"\\nToss Time! Choose Head or Tail (H/T):\")\n    player_call = input(\"> \").strip().lower()\n    toss_result = random.choice(['h', 't'])\n    if player_call == toss_result:\n        print(\"You won the toss!\")\n        choice = input(\"Choose to Bat or Bowl (bat/bowl): \").strip().lower()\n        return 'player', choice\n    else:\n        print(\"Computer won the toss!\")",
+        "detail": "old _riend.chall.HAND_GAME",
+        "documentation": {}
+    },
+    {
+        "label": "insane_computer_batting",
+        "kind": 2,
+        "importPath": "old _riend.chall.HAND_GAME",
+        "description": "old _riend.chall.HAND_GAME",
+        "peekOfCode": "def insane_computer_batting():\n    # Skews towards high scoring (4s & 6s)\n    return random.choices([1, 2, 3, 4, 5, 6], weights=[1, 1, 1, 3, 2, 4])[0]\n# Very smart and hard-to-beat bowling (matches your habits)\ndef insane_computer_bowling(player_history):\n    if len(player_history) < 3:\n        return random.randint(1, 6)\n    likely = max(set(player_history[-3:]), key=player_history[-3:].count)\n    # 50% chance to bowl exactly what you're likely to choose\n    return likely if random.random() < 0.5 else random.randint(1, 6)",
+        "detail": "old _riend.chall.HAND_GAME",
+        "documentation": {}
+    },
+    {
+        "label": "insane_computer_bowling",
+        "kind": 2,
+        "importPath": "old _riend.chall.HAND_GAME",
+        "description": "old _riend.chall.HAND_GAME",
+        "peekOfCode": "def insane_computer_bowling(player_history):\n    if len(player_history) < 3:\n        return random.randint(1, 6)\n    likely = max(set(player_history[-3:]), key=player_history[-3:].count)\n    # 50% chance to bowl exactly what you're likely to choose\n    return likely if random.random() < 0.5 else random.randint(1, 6)\ndef play_innings(batting_side, target=None, player_inputs=None):\n    score = 0\n    player_history = []\n    while True:",
+        "detail": "old _riend.chall.HAND_GAME",
+        "documentation": {}
+    },
+    {
+        "label": "play_innings",
+        "kind": 2,
+        "importPath": "old _riend.chall.HAND_GAME",
+        "description": "old _riend.chall.HAND_GAME",
+        "peekOfCode": "def play_innings(batting_side, target=None, player_inputs=None):\n    score = 0\n    player_history = []\n    while True:\n        if batting_side == 'player':\n            try:\n                user_run = int(input(\"Your turn (1-6): \"))\n            except ValueError:\n                print(\"Invalid input.\")\n                continue",
+        "detail": "old _riend.chall.HAND_GAME",
+        "documentation": {}
+    },
+    {
+        "label": "play_game",
+        "kind": 2,
+        "importPath": "old _riend.chall.HAND_GAME",
+        "description": "old _riend.chall.HAND_GAME",
+        "peekOfCode": "def play_game():\n    print(\"\\n🏏 Welcome to Hand Cricket (INSANE MODE)\")\n    toss_winner, choice = toss()\n    player_inputs = []\n    if toss_winner == 'player':\n        player_bats_first = choice == 'bat'\n    else:\n        player_bats_first = choice != 'bat'\n    print(f\"\\n{'You' if player_bats_first else 'Computer'} will bat first!\")\n    first_batter = 'player' if player_bats_first else 'computer'",
+        "detail": "old _riend.chall.HAND_GAME",
+        "documentation": {}
+    },
+    {
+        "label": "main_loop",
+        "kind": 2,
+        "importPath": "old _riend.chall.HAND_GAME",
+        "description": "old _riend.chall.HAND_GAME",
+        "peekOfCode": "def main_loop():\n    while True:\n        play_game()\n        again = input(\"\\nPlay again? (y/n): \").strip().lower()\n        if again != 'y':\n            print(\"\\nThanks for surviving INSANE MODE! 🧠💀\")\n            break\nif __name__ == \"__main__\":\n    main_loop()",
+        "detail": "old _riend.chall.HAND_GAME",
+        "documentation": {}
+    },
+    {
+        "label": "FLAG",
+        "kind": 5,
+        "importPath": "old _riend.chall.HAND_GAME",
+        "description": "old _riend.chall.HAND_GAME",
+        "peekOfCode": "FLAG = \"expX{7ru3_m4st3r_0f_h4nd_cr1ck3t}\"\nVALID_RUNS = [1, 2, 3, 4, 5, 6]\ndef toss():\n    print(\"\\nToss Time! Choose Head or Tail (H/T):\")\n    player_call = input(\"> \").strip().lower()\n    toss_result = random.choice(['h', 't'])\n    if player_call == toss_result:\n        print(\"You won the toss!\")\n        choice = input(\"Choose to Bat or Bowl (bat/bowl): \").strip().lower()\n        return 'player', choice",
+        "detail": "old _riend.chall.HAND_GAME",
+        "documentation": {}
+    },
+    {
+        "label": "VALID_RUNS",
+        "kind": 5,
+        "importPath": "old _riend.chall.HAND_GAME",
+        "description": "old _riend.chall.HAND_GAME",
+        "peekOfCode": "VALID_RUNS = [1, 2, 3, 4, 5, 6]\ndef toss():\n    print(\"\\nToss Time! Choose Head or Tail (H/T):\")\n    player_call = input(\"> \").strip().lower()\n    toss_result = random.choice(['h', 't'])\n    if player_call == toss_result:\n        print(\"You won the toss!\")\n        choice = input(\"Choose to Bat or Bowl (bat/bowl): \").strip().lower()\n        return 'player', choice\n    else:",
+        "detail": "old _riend.chall.HAND_GAME",
+        "documentation": {}
+    },
+    {
+        "label": "slow_print",
+        "kind": 2,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "def slow_print(text, delay=0.02):\n    for c in text:\n        sys.stdout.write(c)\n        sys.stdout.flush()\n        time.sleep(delay)\n    sys.stdout.write('\\n')\n    sys.stdout.flush()\ndef boot_animation():\n    slow_print(ASCII_BOOT, 0.001)\n    time.sleep(0.3)",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "boot_animation",
+        "kind": 2,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "def boot_animation():\n    slow_print(ASCII_BOOT, 0.001)\n    time.sleep(0.3)\n    slow_print('VoidOS v1.0 — Bootloader Secure Terminal', 0.02)\n    time.sleep(0.2)\n    slow_print('System is encrypted. Type \\'help\\' to view available commands.\\n', 0.02)\ndef resolve_path(cur, arg):\n    if arg.startswith('/'):\n        path = arg\n    else:",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "resolve_path",
+        "kind": 2,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "def resolve_path(cur, arg):\n    if arg.startswith('/'):\n        path = arg\n    else:\n        if cur == '/':\n            path = '/' + arg\n        else:\n            path = cur + '/' + arg\n    # Normalize\n    parts = []",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "list_dir",
+        "kind": 2,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "def list_dir(cur):\n    return FS.get(cur, [])\ndef is_dir(path):\n    return path in FS\ndef is_file(path):\n    return path in FILES\ndef cat_file(path):\n    # Try to read from disk if file exists\n    disk_path = None\n    if path == '/var/log/syslog.txt':",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "is_dir",
+        "kind": 2,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "def is_dir(path):\n    return path in FS\ndef is_file(path):\n    return path in FILES\ndef cat_file(path):\n    # Try to read from disk if file exists\n    disk_path = None\n    if path == '/var/log/syslog.txt':\n        disk_path = 'syslog.txt'\n    if disk_path and os.path.exists(disk_path):",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "is_file",
+        "kind": 2,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "def is_file(path):\n    return path in FILES\ndef cat_file(path):\n    # Try to read from disk if file exists\n    disk_path = None\n    if path == '/var/log/syslog.txt':\n        disk_path = 'syslog.txt'\n    if disk_path and os.path.exists(disk_path):\n        with open(disk_path, 'r') as f:\n            return f.read()",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "cat_file",
+        "kind": 2,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "def cat_file(path):\n    # Try to read from disk if file exists\n    disk_path = None\n    if path == '/var/log/syslog.txt':\n        disk_path = 'syslog.txt'\n    if disk_path and os.path.exists(disk_path):\n        with open(disk_path, 'r') as f:\n            return f.read()\n    return FILES.get(path, 'cat: {}: No such file'.format(path))\ndef main():",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "def main():\n    global CUR_DIR\n    boot_animation()\n    while True:\n        sys.stdout.write(PROMPT)\n        sys.stdout.flush()\n        line = sys.stdin.readline()\n        if not line:\n            break\n        cmd = line.strip()",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "FS",
+        "kind": 5,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "FS = {\n    '/': ['bin', 'etc', 'home', 'tmp', 'usr', 'var', 'README.txt'],\n    '/bin': ['ls', 'cat', 'echo'],\n    '/etc': ['passwd', 'shadow', 'hostname', 'boot.conf'],\n    '/home': ['ctf'],\n    '/home/ctf': ['README.txt', 'flag.enc'],\n    '/tmp': [],\n    '/usr': ['share'],\n    '/usr/share': ['doc'],\n    '/usr/share/doc': ['welcome.txt'],",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "FILES",
+        "kind": 5,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "FILES = {\n    # Root level\n    '/README.txt': (\n        '844e97b6039ae68e9033440b9595bdacd2c7f55be608bce3769c1a7e896bf17b7fc2786ef43c2a8609df5afac1a86948\\n'\n    ),\n    '/etc/hostname': 'voidos\\n',\n    '/etc/boot.conf': (\n        'secure_mode=true\\n'\n        'crypto_mask=BOOTLOADER123456\\n'\n        'enable_logging=true\\n'",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "CUR_DIR",
+        "kind": 5,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "CUR_DIR = '/'\nENCRYPTED_IMG = 'os_encrypted.img'\nASCII_BOOT = r\"\"\"\n          _______ _________ ______     _______     __   \n|\\     /|(  ___  )\\__   __/(  __  \\   (  __   )   /  \\  \n| )   ( || (   ) |   ) (   | (  \\  )  | (  )  |   \\/) ) \n| |   | || |   | |   | |   | |   ) |  | | /   |     | | \n( (   ) )| |   | |   | |   | |   | |  | (/ /) |     | | \n \\ \\_/ / | |   | |   | |   | |   ) |  |   / | |     | | \n  \\   /  | (___) |___) (___| (__/  )  |  (__) | _ __) (_",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "ENCRYPTED_IMG",
+        "kind": 5,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "ENCRYPTED_IMG = 'os_encrypted.img'\nASCII_BOOT = r\"\"\"\n          _______ _________ ______     _______     __   \n|\\     /|(  ___  )\\__   __/(  __  \\   (  __   )   /  \\  \n| )   ( || (   ) |   ) (   | (  \\  )  | (  )  |   \\/) ) \n| |   | || |   | |   | |   | |   ) |  | | /   |     | | \n( (   ) )| |   | |   | |   | |   | |  | (/ /) |     | | \n \\ \\_/ / | |   | |   | |   | |   ) |  |   / | |     | | \n  \\   /  | (___) |___) (___| (__/  )  |  (__) | _ __) (_\n   \\_/   (_______)\\_______/(______/   (_______)(_)\\____/",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "ASCII_BOOT",
+        "kind": 5,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "ASCII_BOOT = r\"\"\"\n          _______ _________ ______     _______     __   \n|\\     /|(  ___  )\\__   __/(  __  \\   (  __   )   /  \\  \n| )   ( || (   ) |   ) (   | (  \\  )  | (  )  |   \\/) ) \n| |   | || |   | |   | |   | |   ) |  | | /   |     | | \n( (   ) )| |   | |   | |   | |   | |  | (/ /) |     | | \n \\ \\_/ / | |   | |   | |   | |   ) |  |   / | |     | | \n  \\   /  | (___) |___) (___| (__/  )  |  (__) | _ __) (_\n   \\_/   (_______)\\_______/(______/   (_______)(_)\\____/\n\"\"\"",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "HELP_TEXT",
+        "kind": 5,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "HELP_TEXT = \"\"\"\nAvailable commands:\n  help           Show this help message\n  ls             List files in current directory\n  cd <dir>       Change directory\n  cat <file>     Show file contents\n  (enter key)    Attempt to unlock system\n\"\"\"\nPROMPT = 'voidos> '\n# For netcat compatibility, use sys.stdin.readline()",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    },
+    {
+        "label": "PROMPT",
+        "kind": 5,
+        "importPath": "Void Sector.malboot_nc",
+        "description": "Void Sector.malboot_nc",
+        "peekOfCode": "PROMPT = 'voidos> '\n# For netcat compatibility, use sys.stdin.readline()\ndef slow_print(text, delay=0.02):\n    for c in text:\n        sys.stdout.write(c)\n        sys.stdout.flush()\n        time.sleep(delay)\n    sys.stdout.write('\\n')\n    sys.stdout.flush()\ndef boot_animation():",
+        "detail": "Void Sector.malboot_nc",
+        "documentation": {}
+    }
+]

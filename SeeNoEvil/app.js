@@ -111,7 +111,7 @@ app.post("/login", (req, res) => {
 });
 
 // Start the server
-const PORT = 7777;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`🚀 SeeNoEvil running on http://localhost:${PORT}`);
 });
